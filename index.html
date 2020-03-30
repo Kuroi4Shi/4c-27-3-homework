@@ -12,6 +12,17 @@
     <title>37.3. 4C homework!</title>
 </head>
 <body>
+
+<script>
+function test() {
+    var headID = document.getElementsByTagName("head")[0];
+    var newScript = document.createElement("script");
+    newScript.type = "text/javascript";
+    newScript.innerHTML = document.getElementById("css-input").value;
+    headID.appendChild(newScript);
+}
+</script>
+
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Domácí úkol pro 4.C</h1>
@@ -28,9 +39,9 @@
             <form>
                 <div class="form-group">
                     <label for="css-input">Zde vložte vaše CSS</label>
-                    <textarea class="form-control" id="css-input" rows="20"></textarea>
+                    <textarea class="form-control" id="css-input" placeholder="Prosím použijte tento formát: $('p').css('styl', 'hodnota');" rows="20"></textarea>
                 </div>
-                <button id="css-submit" type="submit" class="btn btn-primary mb-2">Použít</button>
+                <button id="css-submit" type="button" class="btn btn-primary mb-2" onclick="test();">Použít</button>
             </form>
         </div>
         <div id="loremIpsumText" class="col">
@@ -78,13 +89,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-<script>
-  $(document).ready(function () {
-    $("form").on("submit", function (event) {
-      alert('karel');
-      event.preventDefault();
-    });
-  });
-</script>
 </body>
 </html>
